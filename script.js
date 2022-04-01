@@ -11,29 +11,30 @@ var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
 var highScore = 0;
-var currentscore = 0;
+var currentScore = 0;
 var buttons = 8;
 var tries = 3;
 var rounds = 10;
 
 function startGame() {
-    progress = 0;
-    tries = 3;
-    gamePlaying = true;
+  progress = 0;
+  gamePlaying = true;
+
+  document.getElementById("startBtn").classList.add("hidden");
+  document.getElementById("stopBtn").classList.remove("hidden");
   
-    document.getElementById("startBtn").classList.add("hidden");
-    document.getElementById("stopBtn").classList.remove("hidden"); 
-    
-    for(let i = 0; i < rounds; i++){
-      pattern.push(Math.floor((Math.random() * 8) + 1));
-    }
-    
-    playClueSequence();
+  for(let i = 0; i < rounds; i++){
+    pattern.push(Math.floor((Math.random() * 8) + 1));
   }
+  
+  playClueSequence();
+}
 
 function stopGame() {
     gamePlaying = false;
+    pattern = [];
     tries = 3;
+    updateTries();
 
     document.getElementById("startBtn").classList.remove("hidden");
     document.getElementById("stopBtn").classList.add("hidden");
@@ -90,7 +91,6 @@ function playSingleClue(btn){
 
 function playClueSequence(){
     guessCounter = 0;
-    context.resume();
     let delay = nextClueWaitTime; //set delay to initial wait time
     for(let i =  0; i <= progress; i++){ // for each clue that is revealed so far
       console.log("play single clue: " + pattern[i] + " in " + delay + "ms");
@@ -111,15 +111,12 @@ function loseGame(){
       else
         alert("Incorrect, you have " + tries + " attempt left.")
     }
-      
-    progress = 0;
-    updateScore();
 }
 
 function winGame(){
 
     highScore = pattern[buttons].length;
-
+  
     stopGame();
     alert("Amazing! You won!");
 
@@ -139,30 +136,32 @@ function guess(btn){
             if (progress == pattern.length - 1){
                 // GAME OVER: WIN!
                 winGame();
-            }else{
+            }
+            else{
                 // add next turn
-                progress += 1
-                currentscore = progress;
+                progress ++;
+                currentScore = progress;
                 updateScore();
+                
 
-                if (currentscore > highScore) {
-                    highScore = currentscore;
+                if (currentScore > highScore) {
+                    highScore = currentScore;
                     updateMax();
                 }
-
                 playClueSequence();
             }
         }
         else{
-            guessCounter += 1;
+            guessCounter ++;
         }
     }
     else{
-    // guess was incorrect
-    // gameover: lose
-    tries--;
-    updateTries();
-    loseGame();
+      // guess was incorrect
+      // gameover: lose
+      tries--;
+      updateTries();
+      loseGame();
+      setTimeout(playClueSequence, 700);
     }
 }
 // Page Initialization
