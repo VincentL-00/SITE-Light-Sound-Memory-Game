@@ -68,7 +68,16 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
 
+    After creating the Light and Sound Memory Game, I mostly focused on the functions behind the UI. However, I believe that I can definitely make the UI/UX a lot
+    cooler. I only focused on adding images and changing color background, fonts and button padding. I am curious about how to create a creative detailed UI.
+    Unlike game development where you can add in models from blender or adobe, I wonder how possible it would be to make this on an HTML/JS/CSS game. I am also
+    curious about how I can relate this to backend such as the Android App Development class where we used kotlin to create the UI. HTML and CSS were definitely
+    easier than Android Studio in placing button location and changing colors of the background and buttons. I believe this is the case because of the few amount
+    of files that need to be made.
     
+    After googling questions for functions of code I needed help on, I received more insight on the designs of Frontend code and how it can also look very appealing 
+    too. The most interesting idea that came to my mind was if it's possible to make a 3D RPG game as RPG is my favorite category in games. Growing up, I don't 
+    remember seeing any website gamesin 3D. After further researching, with HTML5, there were some 3D games now.
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
 
@@ -82,7 +91,7 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](your-link-here)
+https://youtu.be/rMV0mV3f9rY
 
 
 ## License
