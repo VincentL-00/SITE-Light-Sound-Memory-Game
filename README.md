@@ -87,11 +87,6 @@ If you recorded multiple GIFs for all the implemented features, you can add them
     gender, age and their health to create this dataset to see how deterioration of memory happens overtime between genders or if underlying illnesses can benefit
     memory or make it drastically worse. The difficulty settings overall will provide a detailed set of data that shows how a sped up playblack speed can affect
     the results of different demographics.
-    
-
-## Interview Recording URL Link
-
-https://youtu.be/rMV0mV3f9rY
 
 
 ## License
